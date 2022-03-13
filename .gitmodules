@@ -1,0 +1,3 @@
+[submodule "mne-bids-pipeline"]
+	path = mne-bids-pipeline
+	url = https://github.com/mne-tools/mne-bids-pipeline.git

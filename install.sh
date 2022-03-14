@@ -25,3 +25,6 @@ mamba install pip conda-forge::mne -y
 echo Installing additional mne_bids_requirements
 pip install -r ./mne-bids-pipeline/requirements.txt
 
+#Copy additional scripts to mne_bids_pipeline
+cp $(pwd)/add_ons/_8*.py $(pwd)/mne-bids-pipeline/scripts/source/
+

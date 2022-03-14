@@ -287,8 +287,8 @@ dependencies:
     - jupyterlab-pygments==0.1.2
     - markupsafe==2.1.0
     - mistune==0.8.4
-    - mne==git+https://github.com/mne-tools/mne-python.git@2e0753da5c0fee1768bda1a77a72f9b67e9ae863
-    - mne-bids==git+https://github.com/mne-tools/mne-bids.git@abe93a3ba981e1805690532b6948f8dcd695cef1
+    - git+https://github.com/mne-tools/mne-python.git@2e0753da5c0fee1768bda1a77a72f9b67e9ae863
+    - git+https://github.com/mne-tools/mne-bids.git@abe93a3ba981e1805690532b6948f8dcd695cef1
     - msgpack==1.0.3
     - multidict==6.0.2
     - nbclient==0.5.13

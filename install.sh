@@ -1,3 +1,14 @@
+#!/bin/bash
+if [[ $- == *i* ]]
+then
+	echo Shell is properly in interactive mode
+else
+	echo Error: Shell needs to be invoked using interactive flag
+	echo Without the -i, bash cannot access conda activate in subshell
+	echo bash -i $0
+	exit 1
+fi
+
 # Download mne_bids_pipeline submodule
 echo Downloading mne_bids_pipeline
 git submodule init
@@ -12,5 +23,5 @@ mamba install pip conda-forge::mne -y
 
 #Install mne_bids_pipeline reqs
 echo Installing additional mne_bids_requirements
-pip install ./mne_bids_pipeline/requirements.txt
+pip install -r ./mne-bids-pipeline/requirements.txt
 

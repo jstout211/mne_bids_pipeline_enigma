@@ -27,4 +27,5 @@ pip install -r ./mne-bids-pipeline/requirements.txt
 
 #Copy additional scripts to mne_bids_pipeline
 cp $(pwd)/add_ons/_8*.py $(pwd)/mne-bids-pipeline/scripts/source/
-
+rm $(pwd)/mne-bids-pipeline/scripts/source/__init__.py
+cp $(pwd)/add_ons/__init__.py $(pwd)/mne-bids-pipeline/scripts/source/

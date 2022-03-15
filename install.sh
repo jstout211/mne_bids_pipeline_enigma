@@ -3,7 +3,7 @@
 # Download mne_bids_pipeline submodule
 echo Downloading mne_bids_pipeline
 git submodule init
-git submodule update
+git submodule update --depth 1
 
 #Get full path for conda - so it doesn't have to be activated
 conda_call=$(which conda) 

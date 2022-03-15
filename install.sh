@@ -22,3 +22,6 @@ pip_call=$(pwd)/enigma_meg/bin/pip
 cp $(pwd)/add_ons/_8*.py $(pwd)/mne-bids-pipeline/scripts/source/
 rm $(pwd)/mne-bids-pipeline/scripts/source/__init__.py
 cp $(pwd)/add_ons/__init__.py $(pwd)/mne-bids-pipeline/scripts/source/
+
+#Modify mne_bid_pipeline run.py to use enigma local conda environment
+./mod_script_paths.py mne-bids-pipeline/run.py

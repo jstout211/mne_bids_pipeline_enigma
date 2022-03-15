@@ -3,15 +3,14 @@ channels:
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
-  - _openmp_mutex=4.5=1_llvm
+  - _openmp_mutex=4.5=1_gnu
   - alsa-lib=1.2.3=h516909a_0
   - aom=3.3.0=h27087fc_1
   - appdirs=1.4.4=pyhd3eb1b0_0
   - apptools=5.1.0=pyhd3eb1b0_0
   - asttokens=2.0.5=pyhd3eb1b0_0
   - backcall=0.2.0=pyhd3eb1b0_0
-  - blas=2.113=openblas
-  - blas-devel=3.9.0=13_linux64_openblas
+  - blas=1.1=openblas
   - blosc=1.21.0=h9c3ff4c_0
   - bottleneck=1.3.4=py39hd257fcd_0
   - brotli=1.0.9=he6710b0_2
@@ -38,7 +37,7 @@ dependencies:
   - dbus=1.13.18=hb2f20db_0
   - decorator=5.1.1=pyhd3eb1b0_0
   - deprecated=1.2.13=pyh6c4a22f_0
-  - dipy=1.5.0=py39hd257fcd_0
+  - dipy=1.5.0=py39hd257fcd_1
   - double-conversion=3.1.7=h9c3ff4c_0
   - eigen=3.4.0=h4bd325d_0
   - envisage=6.0.1=pyhd3eb1b0_0
@@ -80,8 +79,9 @@ dependencies:
   - jpeg=9e=h7f98852_0
   - jsoncpp=1.9.4=hff7bd54_2
   - jxrlib=1.1=h7b6447c_2
+  - keyutils=1.6.1=h166bdaf_0
   - kiwisolver=1.3.2=py39h295c915_0
-  - krb5=1.19.2=hac12032_0
+  - krb5=1.19.3=h3790be6_0
   - lame=3.100=h7b6447c_0
   - lcms2=2.12=h3be6417_0
   - ld_impl_linux-64=2.36.1=hea4e1c9_2
@@ -100,15 +100,15 @@ dependencies:
   - libev=4.33=h7f8727e_1
   - libevent=2.1.10=h9b69904_4
   - libffi=3.4.2=h295c915_2
-  - libgcc-ng=11.2.0=h1d223b6_13
-  - libgfortran-ng=11.2.0=h69a702a_13
-  - libgfortran5=11.2.0=h5c6108e_13
+  - libgcc-ng=11.2.0=h1d223b6_14
+  - libgfortran-ng=11.2.0=h69a702a_14
+  - libgfortran5=11.2.0=h5c6108e_14
   - libglib=2.70.2=h174f98d_4
   - libglu=9.0.0=hf484d3e_1
+  - libgomp=11.2.0=h1d223b6_14
   - libiconv=1.16=h516909a_0
   - libidn2=2.3.2=h7f8727e_0
   - liblapack=3.9.0=13_linux64_openblas
-  - liblapacke=3.9.0=13_linux64_openblas
   - libllvm10=10.0.1=hbcb73fb_5
   - libllvm13=13.0.1=hf817b99_2
   - libnetcdf=4.8.1=h42ceab0_1
@@ -120,12 +120,12 @@ dependencies:
   - libpng=1.6.37=hbc83047_0
   - libpq=14.2=hd57d9b9_0
   - libssh2=1.10.0=ha56f1ee_2
-  - libstdcxx-ng=11.2.0=he4da1e4_13
+  - libstdcxx-ng=11.2.0=he4da1e4_14
   - libtasn1=4.18.0=h7f98852_0
   - libtheora=1.1.1=h7f8727e_3
   - libtiff=4.3.0=h542a066_3
   - libunistring=0.9.10=h27cfd23_0
-  - libuuid=2.32.1=h14c3975_1000
+  - libuuid=2.32.1=h7f98852_1000
   - libvorbis=1.3.7=h7b6447c_0
   - libwebp=1.2.2=h55f646e_0
   - libwebp-base=1.2.2=h7f8727e_0
@@ -135,12 +135,11 @@ dependencies:
   - libzip=1.8.0=h4de3113_1
   - libzlib=1.2.11=h36c2ea0_1013
   - libzopfli=1.0.3=he6710b0_0
-  - llvm-openmp=13.0.1=he0ac6c6_1
   - llvmlite=0.36.0=py39h612dafd_4
   - locket=0.2.1=py39h06a4308_2
   - loguru=0.5.3=py39h06a4308_3
   - lz4-c=1.9.3=h295c915_1
-  - lzo=2.10=h49e0be7_2
+  - lzo=2.10=h7b6447c_2
   - matplotlib=3.5.1=py39h06a4308_0
   - matplotlib-base=3.5.1=py39ha18d171_0
   - matplotlib-inline=0.1.3=pyhd8ed1ab_0
@@ -227,7 +226,7 @@ dependencies:
   - tk=8.6.12=h27826a3_0
   - toolz=0.11.2=pyhd3eb1b0_0
   - tornado=6.1=py39h27cfd23_0
-  - tqdm=4.63.0=pyhd8ed1ab_0
+  - tqdm=4.63.0=pyhd3eb1b0_0
   - traitlets=5.1.1=pyhd3eb1b0_0
   - traits=6.3.2=py39h3811e60_0
   - traitsui=7.2.1=pyhd3eb1b0_0
@@ -242,15 +241,15 @@ dependencies:
   - wrapt=1.14.0=py39hb9d737c_0
   - x264=1!161.3030=h7f98852_1
   - xlrd=2.0.1=pyhd3eb1b0_0
-  - xorg-kbproto=1.0.7=h14c3975_1002
-  - xorg-libice=1.0.10=h516909a_0
+  - xorg-kbproto=1.0.7=h7f98852_1002
+  - xorg-libice=1.0.10=h7f98852_0
   - xorg-libsm=1.2.3=hd9c2040_1000
   - xorg-libx11=1.7.2=h7f98852_0
   - xorg-libxt=1.2.1=h7f98852_2
   - xorg-xproto=7.0.31=h27cfd23_1007
   - xz=5.2.5=h7b6447c_0
   - yaml=0.2.5=h7b6447c_0
-  - zfp=0.5.5=h2531618_6
+  - zfp=0.5.5=h295c915_6
   - zlib=1.2.11=h36c2ea0_1013
   - zstd=1.5.2=ha95c52a_0
   - pip:
@@ -268,15 +267,18 @@ dependencies:
     - coloredlogs==15.0.1
     - defusedxml==0.7.1
     - distributed==2022.2.1
+    - git+https://github.com/jstout211/enigma_MEG.git
     - entrypoints==0.4
     - et-xmlfile==1.1.0
     - fire==0.4.0
+    - fooof==1.0.0
     - frozenlist==1.3.0
     - future==0.18.2
     - h5io==0.1.7
     - heapdict==1.0.1
     - humanfriendly==10.0
     - importlib-resources==5.4.0
+    - iniconfig==1.1.1
     - jinja2==3.0.3
     - json-tricks==3.15.5
     - jsonschema==4.4.0
@@ -295,11 +297,16 @@ dependencies:
     - nbconvert==6.4.4
     - nbformat==5.2.0
     - nest-asyncio==1.5.4
+    - neurodsp==2.1.0
     - openpyxl==3.0.9
     - pandocfilters==1.5.0
+    - pluggy==1.0.0
     - prometheus-client==0.13.1
+    - py==1.11.0
     - pymatreader==0.0.29
+    - pynndescent==0.5.6
     - pyrsistent==0.18.1
+    - pytest==7.1.0
     - pyzmq==22.3.0
     - seaborn==0.11.2
     - send2trash==1.8.0
@@ -311,6 +318,8 @@ dependencies:
     - termcolor==1.1.0
     - terminado==0.13.3
     - testpath==0.6.0
+    - tomli==2.0.1
+    - umap-learn==0.5.2
     - webencodings==0.5.1
     - websocket-client==1.3.1
     - xmltodict==0.12.0

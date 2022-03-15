@@ -8,6 +8,12 @@ git submodule update
 #Get full path for conda - so it doesn't have to be activated
 conda_call=$(which conda) 
 
+#Override install
+# ${mamba_call} env create -p $(pwd)/enigma_meg conda-forge::mne ipython pip
+# ${pip_call} install git+https://github.com/jstout211/enigma_MEG.git
+# ${pip_call} install -r $(pwd)/mne-bids-pipeline/requirements.txt
+
+
 #Install mamba to increase speed of conda creation
 echo Installing standard MNE graphical configuration
 ${conda_call} install conda-forge::mamba -y 

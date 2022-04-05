@@ -12,6 +12,11 @@ import os
 from scipy.io import loadmat
 import json
 import glob
+
+import nibabel as nb
+import copy
+from mne.transforms import apply_trans
+
 # bstorm_datadir='/fast/MATLAB_toolboxes/brainstorm_data/Protocol03'
 # subjid = 'Subject01'
 
@@ -43,11 +48,19 @@ def bstormFid2dict(subjid, bstorm_datadir):
     for i in range(len(fids)):
         tmp_ = mat['SCS'][0][0][i][0]+ mat['InitTransf'][0][1][0:3,3]
         fid_locs[fids[i]]=tmp_
-    
-    #Convert to list from numpy array
-    for key in fid_locs:
-        fid_locs[key]=[str(i) for i in fid_locs[key]]
     return fid_locs
+
+
+def convert2vox(t1_fname, coords_dict):
+    t1 = nb.load(t1_fname)
+    t1_mgh = nb.MGHImage(t1.dataobj, t1.affine)
+    
+    vox_coords = copy.deepcopy(coords_dict)
+    for fid in vox_coords.keys():
+        tmp_ = apply_trans(t1_mgh.header.get_ras2vox(), coords_dict[fid])
+        vox_coords[fid] = list(tmp_)
+    return vox_coords
+
 
 def add_fids2json(fid_locs=None, bids_id=None, bids_root=None):
     '''
@@ -96,6 +109,14 @@ def add_fids2json(fid_locs=None, bids_id=None, bids_root=None):
         T1json_fname=T1w_fname.replace('.nii','.json')
     else:
         raise ValueError(f'The T1w image does not appear to have a typical extension: {T1w_fname}')
+    
+    #Convert to Voxel Indices
+    fid_locs = convert2vox(T1w_fname, fid_locs)
+    
+    #Convert to list of strings from numpy array
+    for key in fid_locs:
+        fid_locs[key]=[str(i) for i in fid_locs[key]]
+    
     if op.exists(T1json_fname):
         with open(T1json_fname) as f:
             jdict = json.load(f) 

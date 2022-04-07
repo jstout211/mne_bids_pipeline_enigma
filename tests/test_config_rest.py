@@ -1,6 +1,6 @@
 study_name = 'ENIGMA_MEG'
 
-#subjects=['']
+subjects=['01']
 task='rest'
 runs=['01']
 l_freq = 0.5

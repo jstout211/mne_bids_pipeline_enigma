@@ -2,7 +2,7 @@ study_name = 'ENIGMA_MEG'
 
 #subjects=['']
 task='rest'
-runs=['1']
+runs=['01']
 l_freq = 0.5
 h_freq = 140
 

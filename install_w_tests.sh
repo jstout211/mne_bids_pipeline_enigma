@@ -41,7 +41,12 @@ echo "bids_root = '$(pwd)/tests/_test_data'" >> ${test_config_fname}
 echo "deriv_root = f'{bids_root}/derivatives/ENIGMA_MEG'" >> ${test_config_fname}
 echo "subjects_dir = f'{bids_root}/derivatives/freesurfer/subjects'" >> ${test_config_fname}
 
+scan_tsv_fname=$(pwd)/tests/_test_data/sub-01/sub-01_scans.tsv
+echo "acq_time	filename" > ${scan_tsv_fname}
+echo "2002-12-03T20:01:10	meg/sub-01_task-rest_run-01_meg.fif" >> ${scan_tsv_fname}
 
+echo "$(pwd)/mne-bids-pipeline/run.py --config=$(pwd)/tests/test_config_rest.py" > tests/test_runner.sh
+chmod +x tests/test_runner.sh
 #datalad clone https://github.com/OpenNeuroDatasets/ds003568.git _test_data
 #datalad get _test_data/sub-23490/meg/sub-23490_task-rest_*
 #datalad get _test_data/sub-23490/meg/sub-23490_coordsystem.json

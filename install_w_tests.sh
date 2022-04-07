@@ -37,9 +37,9 @@ echo Changing the audiovisual data to Fake Rest data for testing
 for i in tests/_test_data/sub-01/meg/*; do mv $i ${i/audiovisual/rest} ; done
 
 test_config_fname=$(pwd)/tests/test_config_rest.py
-echo bids_root = $(pwd)/tests/_test_data >> ${test_config_fname}
-echo deriv_root = f'{bids_root}/derivatives/ENIGMA_MEG' >> ${test_config_fname}
-echo subjects_dir = f'{bids_root}/derivatives/freesurfer/subjects' >> ${test_config_fname}
+echo "bids_root = '$(pwd)/tests/_test_data'" >> ${test_config_fname}
+echo "deriv_root = f'{bids_root}/derivatives/ENIGMA_MEG'" >> ${test_config_fname}
+echo "subjects_dir = f'{bids_root}/derivatives/freesurfer/subjects'" >> ${test_config_fname}
 
 
 #datalad clone https://github.com/OpenNeuroDatasets/ds003568.git _test_data

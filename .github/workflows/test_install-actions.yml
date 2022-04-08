@@ -1,0 +1,10 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: ./install_w_tests.sh
+      - run: ./tests/test_runner.sh
